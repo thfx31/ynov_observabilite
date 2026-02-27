@@ -1,0 +1,66 @@
+services:
+  zabbix-db:
+    image: postgres:15-alpine
+    container_name: zabbix-db
+    volumes:
+      - ./zbx_env/var/lib/postgresql/data:/var/lib/postgresql/data:rw
+    environment:
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix_password
+      - POSTGRES_DB=zabbix
+    restart: always
+    networks:
+      - zabbix-net
+
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql:7.0-alpine-latest
+    container_name: zabbix-server
+    ports:
+      - "10051:10051"
+    environment:
+      - DB_SERVER_HOST=zabbix-db
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix_password
+      - POSTGRES_DB=zabbix
+      - ZBX_STARTDISCOVERERS=5
+    depends_on:
+      - zabbix-db
+    restart: always
+    networks:
+      - zabbix-net
+
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-pgsql:7.0-alpine-latest
+    container_name: zabbix-web
+    ports:
+      - "8080:8080"
+    environment:
+      - ZBX_SERVER_HOST=zabbix-server
+      - DB_SERVER_HOST=zabbix-db
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix_password
+      - POSTGRES_DB=zabbix
+      - PHP_TZ=Europe/Paris
+    depends_on:
+      - zabbix-db
+      - zabbix-server
+    restart: always
+    networks:
+      - zabbix-net
+
+  zabbix-agent:
+    image: zabbix/zabbix-agent:7.0-alpine-latest
+    container_name: zabbix-agent
+    ports:
+      - "10050:10050"
+    environment:
+      - ZBX_HOSTNAME=Zabbix-Server-Host
+      - ZBX_SERVER_HOST=zabbix-server
+      - ZBX_SERVER_ACTIVE=zabbix-server
+    restart: always
+    networks:
+      - zabbix-net
+
+networks:
+  zabbix-net:
+    driver: bridge
