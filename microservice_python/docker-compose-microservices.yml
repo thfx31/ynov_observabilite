@@ -1,0 +1,75 @@
+services:
+  # MICROSERVICES
+  order_service:
+    build:
+      context: ./microservice_order
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    restart: unless-stopped
+    networks:
+      - zabbix-net
+
+  product_service:
+    build:
+      context: ./microservice_product
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5000"
+    restart: unless-stopped
+    networks:
+      - zabbix-net
+
+  user_service:
+    build:
+      context: ./microservice_user
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5000"
+    restart: unless-stopped
+    networks:
+      - zabbix-net
+
+  # AGENTS ZABBIX (1 par microservice)
+  zabbix-agent-order:
+    image: zabbix/zabbix-agent:7.0-alpine-latest
+    container_name: zabbix-agent-order
+    environment:
+      - ZBX_HOSTNAME=order_service
+      - ZBX_SERVER_HOST=zabbix-server
+      - ZBX_SERVER_ACTIVE=zabbix-server
+    depends_on:
+      - order_service
+    restart: always
+    networks:
+      - zabbix-net
+
+  zabbix-agent-product:
+    image: zabbix/zabbix-agent:7.0-alpine-latest
+    container_name: zabbix-agent-product
+    environment:
+      - ZBX_HOSTNAME=product_service
+      - ZBX_SERVER_HOST=zabbix-server
+      - ZBX_SERVER_ACTIVE=zabbix-server
+    depends_on:
+      - product_service
+    restart: always
+    networks:
+      - zabbix-net
+
+  zabbix-agent-user:
+    image: zabbix/zabbix-agent:7.0-alpine-latest
+    container_name: zabbix-agent-user
+    environment:
+      - ZBX_HOSTNAME=user_service
+      - ZBX_SERVER_HOST=zabbix-server
+      - ZBX_SERVER_ACTIVE=zabbix-server
+    depends_on:
+      - user_service
+    restart: always
+    networks:
+      - zabbix-net
+
+networks:
+  zabbix-net:
+    external: true

@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  title: API Produit
+  version: 1.0.0
+paths:
+  /product:
+    get:
+      summary: Retrieve product information
+      responses:
+        '200':
+          description: Product information retrieved

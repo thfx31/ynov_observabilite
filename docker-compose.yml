@@ -64,3 +64,4 @@ services:
 networks:
   zabbix-net:
     driver: bridge
+    name: zabbix-net

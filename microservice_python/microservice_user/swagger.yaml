@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: API Utilisateur
+  version: 1.0.0
+paths:
+  /user:
+    get:
+      summary: Retrieve user information
+      responses:
+        '200':
+          description: User information retrieved
+    post:
+      summary: Create a new user
+      responses:
+        '201':
+          description: User created
+    delete:
+      summary: Delete a user
+      responses:
+        '204':
+          description: User deleted
