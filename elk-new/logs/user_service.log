@@ -1,0 +1,209 @@
+2026-03-09 14:00:05,473 - INFO - [User Service] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.26.0.2:5001
+2026-03-09 14:00:05,473 - INFO - [User Service] - [33mPress CTRL+C to quit[0m
+2026-03-09 14:00:05,635 - INFO - [User Service] - Added user: {'id': '667', 'name': 'Bob'}
+2026-03-09 14:00:05,635 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,637 - INFO - [User Service] - Added user: {'id': '982', 'name': 'Charlie'}
+2026-03-09 14:00:05,637 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,638 - INFO - [User Service] - Added user: {'id': '570', 'name': 'Eve'}
+2026-03-09 14:00:05,639 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,640 - INFO - [User Service] - Added user: {'id': '286', 'name': 'Alice'}
+2026-03-09 14:00:05,640 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,641 - INFO - [User Service] - Added user: {'id': '94', 'name': 'Eve'}
+2026-03-09 14:00:05,642 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,644 - INFO - [User Service] - Added user: {'id': '237', 'name': 'Alice'}
+2026-03-09 14:00:05,644 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,645 - INFO - [User Service] - Added user: {'id': '381', 'name': 'Charlie'}
+2026-03-09 14:00:05,645 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,647 - INFO - [User Service] - Added user: {'id': '23', 'name': 'Eve'}
+2026-03-09 14:00:05,647 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,648 - INFO - [User Service] - Added user: {'id': '638', 'name': 'Alice'}
+2026-03-09 14:00:05,648 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,649 - INFO - [User Service] - Added user: {'id': '40', 'name': 'David'}
+2026-03-09 14:00:05,649 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,651 - INFO - [User Service] - Added user: {'id': '74', 'name': 'Eve'}
+2026-03-09 14:00:05,651 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,652 - INFO - [User Service] - Added user: {'id': '267', 'name': 'Eve'}
+2026-03-09 14:00:05,652 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,654 - INFO - [User Service] - Added user: {'id': '344', 'name': 'Eve'}
+2026-03-09 14:00:05,654 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,655 - INFO - [User Service] - Added user: {'id': '502', 'name': 'Eve'}
+2026-03-09 14:00:05,655 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,656 - INFO - [User Service] - Added user: {'id': '634', 'name': 'David'}
+2026-03-09 14:00:05,657 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,658 - INFO - [User Service] - Added user: {'id': '303', 'name': 'Charlie'}
+2026-03-09 14:00:05,658 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,659 - INFO - [User Service] - Added user: {'id': '385', 'name': 'David'}
+2026-03-09 14:00:05,659 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,661 - INFO - [User Service] - Added user: {'id': '34', 'name': 'Charlie'}
+2026-03-09 14:00:05,661 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,662 - INFO - [User Service] - Added user: {'id': '694', 'name': 'Charlie'}
+2026-03-09 14:00:05,662 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,664 - INFO - [User Service] - Added user: {'id': '707', 'name': 'Bob'}
+2026-03-09 14:00:05,664 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,665 - INFO - [User Service] - Added user: {'id': '61', 'name': 'Eve'}
+2026-03-09 14:00:05,665 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,666 - INFO - [User Service] - Added user: {'id': '541', 'name': 'David'}
+2026-03-09 14:00:05,666 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,668 - INFO - [User Service] - Added user: {'id': '108', 'name': 'Charlie'}
+2026-03-09 14:00:05,668 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,669 - INFO - [User Service] - Added user: {'id': '8', 'name': 'Alice'}
+2026-03-09 14:00:05,669 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,671 - INFO - [User Service] - Added user: {'id': '370', 'name': 'Alice'}
+2026-03-09 14:00:05,671 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,672 - INFO - [User Service] - Added user: {'id': '236', 'name': 'Charlie'}
+2026-03-09 14:00:05,672 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,673 - INFO - [User Service] - Added user: {'id': '890', 'name': 'Bob'}
+2026-03-09 14:00:05,673 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,675 - INFO - [User Service] - Added user: {'id': '588', 'name': 'Alice'}
+2026-03-09 14:00:05,675 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,676 - INFO - [User Service] - Added user: {'id': '800', 'name': 'Bob'}
+2026-03-09 14:00:05,676 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,677 - INFO - [User Service] - Added user: {'id': '803', 'name': 'Bob'}
+2026-03-09 14:00:05,677 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,678 - INFO - [User Service] - Added user: {'id': '254', 'name': 'Alice'}
+2026-03-09 14:00:05,678 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,680 - INFO - [User Service] - Added user: {'id': '510', 'name': 'David'}
+2026-03-09 14:00:05,680 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,681 - INFO - [User Service] - Added user: {'id': '618', 'name': 'Eve'}
+2026-03-09 14:00:05,681 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,682 - INFO - [User Service] - Added user: {'id': '499', 'name': 'Alice'}
+2026-03-09 14:00:05,682 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,683 - INFO - [User Service] - Added user: {'id': '797', 'name': 'David'}
+2026-03-09 14:00:05,683 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,685 - INFO - [User Service] - Added user: {'id': '823', 'name': 'Charlie'}
+2026-03-09 14:00:05,685 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,686 - INFO - [User Service] - Added user: {'id': '601', 'name': 'Bob'}
+2026-03-09 14:00:05,686 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,687 - INFO - [User Service] - Added user: {'id': '638', 'name': 'Charlie'}
+2026-03-09 14:00:05,687 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,689 - INFO - [User Service] - Added user: {'id': '387', 'name': 'Charlie'}
+2026-03-09 14:00:05,689 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,690 - INFO - [User Service] - Added user: {'id': '919', 'name': 'Eve'}
+2026-03-09 14:00:05,690 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,691 - INFO - [User Service] - Added user: {'id': '671', 'name': 'Charlie'}
+2026-03-09 14:00:05,691 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,692 - INFO - [User Service] - Added user: {'id': '690', 'name': 'David'}
+2026-03-09 14:00:05,692 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,693 - INFO - [User Service] - Added user: {'id': '304', 'name': 'Eve'}
+2026-03-09 14:00:05,694 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,695 - INFO - [User Service] - Added user: {'id': '211', 'name': 'Charlie'}
+2026-03-09 14:00:05,695 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,696 - INFO - [User Service] - Added user: {'id': '744', 'name': 'Eve'}
+2026-03-09 14:00:05,696 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,697 - INFO - [User Service] - Added user: {'id': '46', 'name': 'Eve'}
+2026-03-09 14:00:05,698 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,699 - INFO - [User Service] - Added user: {'id': '720', 'name': 'Alice'}
+2026-03-09 14:00:05,699 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,700 - INFO - [User Service] - Added user: {'id': '805', 'name': 'David'}
+2026-03-09 14:00:05,700 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,701 - INFO - [User Service] - Added user: {'id': '945', 'name': 'Eve'}
+2026-03-09 14:00:05,702 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,703 - INFO - [User Service] - Added user: {'id': '309', 'name': 'Charlie'}
+2026-03-09 14:00:05,703 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,704 - INFO - [User Service] - Added user: {'id': '645', 'name': 'Alice'}
+2026-03-09 14:00:05,704 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,705 - INFO - [User Service] - Added user: {'id': '197', 'name': 'Charlie'}
+2026-03-09 14:00:05,705 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,706 - INFO - [User Service] - Added user: {'id': '522', 'name': 'Charlie'}
+2026-03-09 14:00:05,706 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,708 - INFO - [User Service] - Added user: {'id': '215', 'name': 'Alice'}
+2026-03-09 14:00:05,708 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,709 - INFO - [User Service] - Added user: {'id': '71', 'name': 'Eve'}
+2026-03-09 14:00:05,709 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,710 - INFO - [User Service] - Added user: {'id': '545', 'name': 'Eve'}
+2026-03-09 14:00:05,710 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,711 - INFO - [User Service] - Added user: {'id': '755', 'name': 'Alice'}
+2026-03-09 14:00:05,711 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,713 - INFO - [User Service] - Added user: {'id': '282', 'name': 'Charlie'}
+2026-03-09 14:00:05,713 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,714 - INFO - [User Service] - Added user: {'id': '98', 'name': 'Bob'}
+2026-03-09 14:00:05,714 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,715 - INFO - [User Service] - Added user: {'id': '323', 'name': 'Charlie'}
+2026-03-09 14:00:05,715 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,716 - INFO - [User Service] - Added user: {'id': '132', 'name': 'David'}
+2026-03-09 14:00:05,716 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,717 - INFO - [User Service] - Added user: {'id': '83', 'name': 'Alice'}
+2026-03-09 14:00:05,718 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,719 - INFO - [User Service] - Added user: {'id': '302', 'name': 'Bob'}
+2026-03-09 14:00:05,719 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,720 - INFO - [User Service] - Added user: {'id': '694', 'name': 'Charlie'}
+2026-03-09 14:00:05,720 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,722 - INFO - [User Service] - Added user: {'id': '705', 'name': 'Eve'}
+2026-03-09 14:00:05,722 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,723 - INFO - [User Service] - Added user: {'id': '406', 'name': 'Charlie'}
+2026-03-09 14:00:05,723 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,724 - INFO - [User Service] - Added user: {'id': '441', 'name': 'Charlie'}
+2026-03-09 14:00:05,724 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,725 - INFO - [User Service] - Added user: {'id': '400', 'name': 'Eve'}
+2026-03-09 14:00:05,726 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,727 - INFO - [User Service] - Added user: {'id': '196', 'name': 'Eve'}
+2026-03-09 14:00:05,727 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,728 - INFO - [User Service] - Added user: {'id': '326', 'name': 'Eve'}
+2026-03-09 14:00:05,728 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,729 - INFO - [User Service] - Added user: {'id': '809', 'name': 'Alice'}
+2026-03-09 14:00:05,729 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,731 - INFO - [User Service] - Added user: {'id': '37', 'name': 'Alice'}
+2026-03-09 14:00:05,731 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,732 - INFO - [User Service] - Added user: {'id': '237', 'name': 'Alice'}
+2026-03-09 14:00:05,732 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,733 - INFO - [User Service] - Added user: {'id': '238', 'name': 'Alice'}
+2026-03-09 14:00:05,733 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,735 - INFO - [User Service] - Added user: {'id': '238', 'name': 'Bob'}
+2026-03-09 14:00:05,735 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,737 - INFO - [User Service] - Added user: {'id': '875', 'name': 'Charlie'}
+2026-03-09 14:00:05,738 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,739 - INFO - [User Service] - Added user: {'id': '752', 'name': 'Eve'}
+2026-03-09 14:00:05,740 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,741 - INFO - [User Service] - Added user: {'id': '621', 'name': 'Alice'}
+2026-03-09 14:00:05,741 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,743 - INFO - [User Service] - Added user: {'id': '609', 'name': 'Bob'}
+2026-03-09 14:00:05,743 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,744 - INFO - [User Service] - Added user: {'id': '969', 'name': 'Bob'}
+2026-03-09 14:00:05,745 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,746 - INFO - [User Service] - Added user: {'id': '703', 'name': 'David'}
+2026-03-09 14:00:05,746 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,747 - INFO - [User Service] - Added user: {'id': '361', 'name': 'Alice'}
+2026-03-09 14:00:05,747 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,749 - INFO - [User Service] - Added user: {'id': '635', 'name': 'David'}
+2026-03-09 14:00:05,749 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,750 - INFO - [User Service] - Added user: {'id': '598', 'name': 'Alice'}
+2026-03-09 14:00:05,750 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,752 - INFO - [User Service] - Added user: {'id': '890', 'name': 'Bob'}
+2026-03-09 14:00:05,752 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,753 - INFO - [User Service] - Added user: {'id': '439', 'name': 'Alice'}
+2026-03-09 14:00:05,753 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,755 - INFO - [User Service] - Added user: {'id': '552', 'name': 'David'}
+2026-03-09 14:00:05,755 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,757 - INFO - [User Service] - Added user: {'id': '378', 'name': 'Bob'}
+2026-03-09 14:00:05,757 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,758 - INFO - [User Service] - Added user: {'id': '336', 'name': 'Eve'}
+2026-03-09 14:00:05,758 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,759 - INFO - [User Service] - Added user: {'id': '84', 'name': 'Charlie'}
+2026-03-09 14:00:05,759 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,761 - INFO - [User Service] - Added user: {'id': '137', 'name': 'Alice'}
+2026-03-09 14:00:05,761 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,762 - INFO - [User Service] - Added user: {'id': '740', 'name': 'Bob'}
+2026-03-09 14:00:05,762 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,764 - INFO - [User Service] - Added user: {'id': '138', 'name': 'Alice'}
+2026-03-09 14:00:05,764 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,765 - INFO - [User Service] - Added user: {'id': '221', 'name': 'Eve'}
+2026-03-09 14:00:05,765 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,766 - INFO - [User Service] - Added user: {'id': '371', 'name': 'David'}
+2026-03-09 14:00:05,766 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,767 - INFO - [User Service] - Added user: {'id': '294', 'name': 'Bob'}
+2026-03-09 14:00:05,767 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,769 - INFO - [User Service] - Added user: {'id': '601', 'name': 'David'}
+2026-03-09 14:00:05,769 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,770 - INFO - [User Service] - Added user: {'id': '467', 'name': 'Bob'}
+2026-03-09 14:00:05,770 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,771 - INFO - [User Service] - Added user: {'id': '33', 'name': 'Eve'}
+2026-03-09 14:00:05,771 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,772 - INFO - [User Service] - Added user: {'id': '216', 'name': 'Alice'}
+2026-03-09 14:00:05,773 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /user HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,774 - INFO - [User Service] - GET request for users
+2026-03-09 14:00:05,774 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "GET /user HTTP/1.1" 200 -
+2026-03-09 14:00:05,775 - WARNING - [User Service] - User not found for deletion: ID 691
+2026-03-09 14:00:05,775 - INFO - [User Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[33mDELETE /user?id=691 HTTP/1.1[0m" 404 -

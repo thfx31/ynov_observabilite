@@ -1,0 +1,7 @@
+2026-03-09 14:00:05,473 - INFO - [Product Service] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.26.0.3:5002
+2026-03-09 14:00:05,473 - INFO - [Product Service] - [33mPress CTRL+C to quit[0m
+2026-03-09 14:00:05,777 - INFO - [Product Service] - GET request for products
+2026-03-09 14:00:05,777 - INFO - [Product Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "GET /product HTTP/1.1" 200 -

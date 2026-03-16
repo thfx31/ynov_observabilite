@@ -1,0 +1,107 @@
+2026-03-09 14:00:05,475 - INFO - [Order Service] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.26.0.4:5003
+2026-03-09 14:00:05,475 - INFO - [Order Service] - [33mPress CTRL+C to quit[0m
+2026-03-09 14:00:05,779 - INFO - [Order Service] - Added order: {'id': 0, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,779 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,780 - INFO - [Order Service] - Added order: {'id': 1, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,780 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,782 - INFO - [Order Service] - Added order: {'id': 2, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,782 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,783 - INFO - [Order Service] - Added order: {'id': 3, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,783 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,784 - INFO - [Order Service] - Added order: {'id': 4, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,784 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,785 - INFO - [Order Service] - Added order: {'id': 5, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,785 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,787 - INFO - [Order Service] - Added order: {'id': 6, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,787 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,788 - INFO - [Order Service] - Added order: {'id': 7, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,788 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,789 - INFO - [Order Service] - Added order: {'id': 8, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,789 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,790 - INFO - [Order Service] - Added order: {'id': 9, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,790 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,792 - INFO - [Order Service] - Added order: {'id': 10, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,792 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,793 - INFO - [Order Service] - Added order: {'id': 11, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,793 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,794 - INFO - [Order Service] - Added order: {'id': 12, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,794 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,795 - INFO - [Order Service] - Added order: {'id': 13, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,795 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,797 - INFO - [Order Service] - Added order: {'id': 14, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,797 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,798 - INFO - [Order Service] - Added order: {'id': 15, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,798 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,799 - INFO - [Order Service] - Added order: {'id': 16, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,799 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,800 - INFO - [Order Service] - Added order: {'id': 17, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,800 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,802 - INFO - [Order Service] - Added order: {'id': 18, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,802 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,803 - INFO - [Order Service] - Added order: {'id': 19, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,803 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,805 - INFO - [Order Service] - Added order: {'id': 20, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,805 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,806 - INFO - [Order Service] - Added order: {'id': 21, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,806 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,807 - INFO - [Order Service] - Added order: {'id': 22, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,807 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,808 - INFO - [Order Service] - Added order: {'id': 23, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,809 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,810 - INFO - [Order Service] - Added order: {'id': 24, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,810 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,811 - INFO - [Order Service] - Added order: {'id': 25, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,811 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,813 - INFO - [Order Service] - Added order: {'id': 26, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,813 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,814 - INFO - [Order Service] - Added order: {'id': 27, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,814 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,815 - INFO - [Order Service] - Added order: {'id': 28, 'user_id': '216', 'product': 'Laptop'}
+2026-03-09 14:00:05,815 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,817 - INFO - [Order Service] - Added order: {'id': 29, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,817 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,818 - INFO - [Order Service] - Added order: {'id': 30, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,818 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,819 - INFO - [Order Service] - Added order: {'id': 31, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,819 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,820 - INFO - [Order Service] - Added order: {'id': 32, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,820 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,822 - INFO - [Order Service] - Added order: {'id': 33, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,822 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,823 - INFO - [Order Service] - Added order: {'id': 34, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,823 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,824 - INFO - [Order Service] - Added order: {'id': 35, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,824 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,825 - INFO - [Order Service] - Added order: {'id': 36, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,825 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,827 - INFO - [Order Service] - Added order: {'id': 37, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,827 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,828 - INFO - [Order Service] - Added order: {'id': 38, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,828 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,829 - INFO - [Order Service] - Added order: {'id': 39, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,829 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,830 - INFO - [Order Service] - Added order: {'id': 40, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,831 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,832 - INFO - [Order Service] - Added order: {'id': 41, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,832 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,833 - INFO - [Order Service] - Added order: {'id': 42, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,833 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,834 - INFO - [Order Service] - Added order: {'id': 43, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,834 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,836 - INFO - [Order Service] - Added order: {'id': 44, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,836 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,837 - INFO - [Order Service] - Added order: {'id': 45, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,837 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,838 - INFO - [Order Service] - Added order: {'id': 46, 'user_id': '216', 'product': 'Book'}
+2026-03-09 14:00:05,839 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,840 - INFO - [Order Service] - Added order: {'id': 47, 'user_id': '216', 'product': 'Pen'}
+2026-03-09 14:00:05,840 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,841 - INFO - [Order Service] - Added order: {'id': 48, 'user_id': '216', 'product': 'Notebook'}
+2026-03-09 14:00:05,841 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,843 - INFO - [Order Service] - Added order: {'id': 49, 'user_id': '216', 'product': 'Phone'}
+2026-03-09 14:00:05,843 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "[35m[1mPOST /order HTTP/1.1[0m" 201 -
+2026-03-09 14:00:05,844 - INFO - [Order Service] - GET request for orders
+2026-03-09 14:00:05,845 - INFO - [Order Service] - 172.26.0.5 - - [09/Mar/2026 14:00:05] "GET /order HTTP/1.1" 200 -
