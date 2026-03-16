@@ -1,113 +1,140 @@
-# Stack ELK — TP Observabilité Ynov M2
+# Documentation Stack ELK
+**TP Observabilité — Ynov M2 Cloud, Sécurité et Infrastructure**
 
-## Prérequis
+---
 
-- Docker + Docker Compose installés
-- `git` installé
-- `nc` (netcat) installé
+## 1. Présentation
+
+La Stack ELK est un ensemble de trois outils open source développés par Elastic, permettant la collecte, le stockage et la visualisation de logs.
+
+| Composant | Rôle | Description |
+|-----------|------|-------------|
+| **Elasticsearch** | Moteur de recherche | Stockage et indexation des logs |
+| **Logstash** | Collecte & traitement | Ingère, transforme et route les logs |
+| **Kibana** | Visualisation | Interface web pour explorer et créer des dashboards |
+| **Filebeat** | Agent de collecte | Lit les logs Docker et les transmet à Logstash |
+
+---
+
+## 2. Architecture
+
+```
+Conteneurs Docker (stdout)
+       ↓
+   Filebeat  ←── lit /var/lib/docker/containers
+       ↓
+   Logstash  ←── parse, filtre, enrichit
+       ↓
+ Elasticsearch ←── stocke et indexe
+       ↓
+    Kibana   ←── visualise et analyse
+```
+
+---
+
+## 3. Prérequis
+
+- Docker Engine + Docker Compose
+- `git`
+- `nc` (netcat)
 - `vm.max_map_count` configuré (requis par Elasticsearch)
 
 ```bash
+# Temporaire
 sudo sysctl -w vm.max_map_count=262144
-# Permanent :
+
+# Permanent
 echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
 ```
 
 ---
 
-## Installation
+## 4. Structure du projet
 
-```bash
-git clone https://github.com/deviantony/docker-elk.git elk
-cd elk
+```
+elk/
+├── docker-compose.yml          # Stack ELK
+├── filebeat/
+│   └── filebeat.yml            # Config collecte Docker
+├── logstash/
+│   ├── config/
+│   │   └── logstash.yml        # Config Logstash
+│   └── pipeline/
+│       └── logstash.conf       # Pipeline d'ingestion
+├── logs/                       # Logs TP microservices
+│   ├── order_service.log
+│   ├── product_service.log
+│   └── user_service.log
+├── python_apps/                # Applications Python
+│   ├── docker-compose.yml
+│   ├── server/
+│   └── client/
+└── README.md
 ```
 
 ---
 
-## Configuration
+## 5. Configuration
 
-### 1. Pipeline Logstash
+### 5.1 Stack ELK (docker-compose.yml)
 
-Remplacer le contenu de `logstash/pipeline/logstash.conf` :
+La sécurité est désactivée (`xpack.security.enabled=false`) pour simplifier le TP.
 
-```ruby
-input {
-  tcp {
-    port => 50000
-    codec => line
-  }
-}
+Points clés :
+- `discovery.type=single-node` : nœud unique, pas de cluster
+- `xpack.security.enabled=false` : pas d'authentification
+- `ES_JAVA_OPTS=-Xms1g -Xmx1g` : limite RAM à 1 Go
 
-filter {
-  # Ignorer les lignes sans timestamp
-  if [message] !~ /^\d{4}-\d{2}-\d{2}/ {
-    drop { }
-  }
+### 5.2 Pipeline Logstash (logstash/pipeline/logstash.conf)
 
-  grok {
-    match => {
-      "message" => "%{TIMESTAMP_ISO8601:timestamp} - %{LOGLEVEL:level} - \[%{DATA:service}\] - %{GREEDYDATA:log_message}"
-    }
-  }
+Le pipeline gère deux sources et deux formats de logs :
 
-  # Nettoyer les séquences ANSI
-  mutate {
-    gsub => [
-      "log_message", "\e\[[0-9;]*m", "",
-      "log_message", "\[[0-9]+m", ""
-    ]
-  }
+**Source 1 — Fichiers locaux** (logs TP microservices) via `input file`
 
-  date {
-    match => ["timestamp", "yyyy-MM-dd HH:mm:ss,SSS"]
-    target => "@timestamp"
-  }
+**Source 2 — Beats** (logs Docker via Filebeat) via `input beats` sur le port 5044
 
-  mutate {
-    remove_field => ["timestamp", "message", "event", "tags"]
-  }
-}
+**Formats supportés :**
+- Avec `trace_id`/`span_id` : logs des apps Python server/client
+- Sans `trace_id` : logs des microservices du TP
 
-output {
-  elasticsearch {
-    hosts => ["http://elasticsearch:9200"]
-    index => "ynov-logs-%{+YYYY.MM.dd}"
-    user => "elastic"
-    password => "changeme"
-  }
-}
-```
+Un grok supplémentaire extrait `endpoint`, `http_code` et `latency_seconds` depuis les messages du client Python.
+
+### 5.3 Filebeat (filebeat/filebeat.yml)
+
+Collecte les logs de tous les conteneurs Docker via `/var/run/docker.sock` et les transmet à Logstash sur le port 5044.
+
+> ⚠️ Le fichier `filebeat.yml` doit appartenir à root :
+> ```bash
+> sudo chown root:root filebeat/filebeat.yml
+> ```
 
 ---
 
-## Démarrage
+## 6. Démarrage
 
-### 1. Initialiser les utilisateurs
-
-```bash
-docker compose up setup
-```
-
-### 2. Lancer la stack
+### Lancer la stack ELK
 
 ```bash
 docker compose up -d
 ```
 
-### 3. Vérifier que tout est up
+Vérifier que tous les conteneurs sont up :
 
 ```bash
 docker ps
 ```
 
-Les conteneurs suivants doivent être en `Up` :
-- `elk-elasticsearch-1`
-- `elk-kibana-1`
-- `elk-logstash-1`
+Conteneurs attendus : `elasticsearch`, `kibana`, `logstash`, `filebeat`
 
----
+### Lancer les applications Python
 
-## Injection des logs
+```bash
+cd python_apps
+docker compose up -d
+```
+
+### Injection manuelle des logs (TP microservices)
 
 ```bash
 cat logs/order_service.log | nc localhost 50000
@@ -115,81 +142,71 @@ cat logs/product_service.log | nc localhost 50000
 cat logs/user_service.log | nc localhost 50000
 ```
 
-Vérifier que les données sont bien indexées :
+### Vérifier l'indexation
 
 ```bash
-curl -s http://localhost:9200/_cat/indices -u elastic:changeme | grep ynov
+curl -s http://localhost:9200/_cat/indices | grep ynov
 ```
 
 ---
 
-## Kibana
+## 7. Kibana
 
-Accès : [http://localhost:5601](http://localhost:5601)
-
-- **Login** : `elastic`
-- **Mot de passe** : `changeme`
+**URL :** http://localhost:5601  
+**Login :** `elastic`  
+**Mot de passe :** `changeme`
 
 ### Créer le Data View
 
-1. **Analytics → Discover**
-2. **Create a data view**
-3. Index pattern : `ynov-logs-*`
-4. Timestamp field : `@timestamp`
-5. **Save data view to Kibana**
+Analytics → Discover → Create a data view
+
+| Paramètre | Valeur |
+|-----------|--------|
+| Name | TP1 |
+| Index pattern | `ynov-logs-*` |
+| Timestamp field | `@timestamp` |
+
+### Dashboards
+
+| Visualisation | Type | Description |
+|---------------|------|-------------|
+| Répartition par service | Bar vertical stacked | Volume de logs par service avec breakdown par niveau |
+| Latence par endpoint | Bar vertical | Latence moyenne en secondes par endpoint HTTP |
+| Volume par endpoint | Bar vertical | Nombre de requêtes par endpoint |
+| Proportion erreurs | Bar vertical percentage | Répartition des codes HTTP par service |
+| Dernières erreurs | Table | Derniers événements WARNING/ERROR |
 
 ---
 
-## Dashboard
+## 8. Champs disponibles
 
-Accès : **Analytics → Dashboard → Create dashboard**
-
-### Visualisation 1 — Répartition par service
-- Type : **Pie**
-- Slice by : `service.keyword`
-- Metric : Count of records
-
-### Visualisation 2 — Répartition par niveau de log
-- Type : **Pie**
-- Slice by : `level.keyword`
-- Metric : Count of records
-
-### Visualisation 3 — Volume par service
-- Type : **Bar**
-- Horizontal axis : `service.keyword`
-- Vertical axis : Count of records
-
-### Visualisation 4 — Erreurs et warnings par service
-- Type : **Bar**
-- Horizontal axis : `service.keyword`
-- Vertical axis : Count of records
-- Filtre KQL : `level.keyword : WARNING or level.keyword : ERROR`
+| Champ | Type | Description |
+|-------|------|-------------|
+| `@timestamp` | date | Horodatage du log |
+| `level` | keyword | Niveau : DEBUG, INFO, WARNING, ERROR, CRITICAL |
+| `service` | keyword | Nom du service émetteur |
+| `log_message` | text | Message brut du log |
+| `trace_id` | keyword | Identifiant de trace (logs Python) |
+| `span_id` | keyword | Identifiant de span (logs Python) |
+| `endpoint` | keyword | Endpoint HTTP (/data, /process...) |
+| `http_code` | keyword | Code HTTP (200, 201, 404, 500...) |
+| `latency_seconds` | float | Latence de la requête en secondes |
+| `container.name` | keyword | Nom du conteneur Docker source |
 
 ---
 
-## Structure du projet
-
-```
-elk/
-├── .env                          # Mots de passe de la stack
-├── docker-compose.yml            # Stack ELK
-├── logstash/
-│   └── pipeline/
-│       └── logstash.conf         # Pipeline d'ingestion des logs
-└── logs/                         # Fichiers de logs à analyser
-    ├── order_service.log
-    ├── product_service.log
-    └── user_service.log
-```
-
----
-
-## Arrêt et nettoyage
+## 9. Arrêt et nettoyage
 
 ```bash
-# Arrêter la stack
+# Arrêter la stack ELK
 docker compose down
 
-# Arrêter et supprimer les volumes (repart de zéro)
+# Arrêter les apps Python
+cd python_apps && docker compose down
+
+# Tout supprimer (volumes inclus)
 docker compose down -v
+
+# Supprimer un index Elasticsearch
+curl -X DELETE http://localhost:9200/ynov-logs-2026.03.16 -u elastic:changeme
 ```
