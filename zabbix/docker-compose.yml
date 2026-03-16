@@ -8,7 +8,7 @@ services:
       - POSTGRES_USER=zabbix
       - POSTGRES_PASSWORD=zabbix_password
       - POSTGRES_DB=zabbix
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 
@@ -25,7 +25,7 @@ services:
       - ZBX_STARTDISCOVERERS=5
     depends_on:
       - zabbix-db
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 
@@ -44,7 +44,7 @@ services:
     depends_on:
       - zabbix-db
       - zabbix-server
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 
@@ -57,7 +57,7 @@ services:
       - ZBX_HOSTNAME=Zabbix-Server-Host
       - ZBX_SERVER_HOST=zabbix-server
       - ZBX_SERVER_ACTIVE=zabbix-server
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 

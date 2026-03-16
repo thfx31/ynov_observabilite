@@ -40,7 +40,7 @@ services:
       - ZBX_SERVER_ACTIVE=zabbix-server
     depends_on:
       - order_service
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 
@@ -53,7 +53,7 @@ services:
       - ZBX_SERVER_ACTIVE=zabbix-server
     depends_on:
       - product_service
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 
@@ -66,7 +66,7 @@ services:
       - ZBX_SERVER_ACTIVE=zabbix-server
     depends_on:
       - user_service
-    restart: always
+    restart: unless-stopped
     networks:
       - zabbix-net
 
