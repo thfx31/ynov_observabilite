@@ -5,14 +5,15 @@
 
 ## 1. Présentation
 
-La Stack ELK est un ensemble de trois outils open source développés par Elastic, permettant la collecte, le stockage et la visualisation de logs.
+La Stack ELK est un ensemble d'outils open source permettant la collecte, le stockage et la visualisation de logs et de traces distribuées.
 
 | Composant | Rôle | Description |
 |-----------|------|-------------|
-| **Elasticsearch** | Moteur de recherche | Stockage et indexation des logs |
+| **Elasticsearch** | Moteur de recherche | Stockage et indexation des logs et des traces |
 | **Logstash** | Collecte & traitement | Ingère, transforme et route les logs |
 | **Kibana** | Visualisation | Interface web pour explorer et créer des dashboards |
 | **Filebeat** | Agent de collecte | Lit les logs Docker et les transmet à Logstash |
+| **Jaeger** | Tracing distribué | Collecte, stocke et visualise les traces OpenTelemetry |
 
 ---
 
@@ -23,11 +24,13 @@ Conteneurs Docker (stdout)
        ↓
    Filebeat  ←── lit /var/lib/docker/containers
        ↓
-   Logstash  ←── parse, filtre, enrichit
+   Logstash  ←── parse, filtre, enrichit (extrait trace_id/span_id)
        ↓
- Elasticsearch ←── stocke et indexe
-       ↓
-    Kibana   ←── visualise et analyse
+ Elasticsearch ←── stocke et indexe (logs + traces Jaeger)
+     ↓   ↑
+  Kibana   ←── visualise et analyse les logs
+  Jaeger   ←── reçoit les traces OTLP (port 4317) des apps Python
+               visualise les traces sur http://localhost:16686
 ```
 
 ---
@@ -54,7 +57,7 @@ sudo sysctl -p
 
 ```
 elk/
-├── docker-compose.yml          # Stack ELK
+├── docker-compose.yml          # Stack ELK + Jaeger
 ├── filebeat/
 │   └── filebeat.yml            # Config collecte Docker
 ├── logstash/
@@ -66,7 +69,7 @@ elk/
 │   ├── order_service.log
 │   ├── product_service.log
 │   └── user_service.log
-├── python_apps/                # Applications Python
+├── python_apps/                # Applications Python instrumentées OTel
 │   ├── docker-compose.yml
 │   ├── server/
 │   └── client/
@@ -100,7 +103,18 @@ Le pipeline gère deux sources et deux formats de logs :
 
 Un grok supplémentaire extrait `endpoint`, `http_code` et `latency_seconds` depuis les messages du client Python.
 
-### 5.3 Filebeat (filebeat/filebeat.yml)
+### 5.3 Jaeger (docker-compose.yml)
+
+Jaeger utilise **Elasticsearch comme backend de stockage** (index `jaeger-*`), ce qui centralise logs et traces dans le même moteur.
+
+Points clés :
+- `SPAN_STORAGE_TYPE=elasticsearch` : traces stockées dans ES
+- `COLLECTOR_OTLP_ENABLED=true` : accepte les traces au format OTLP (gRPC port 4317, HTTP port 4318)
+- Jaeger ne démarre qu'une fois Elasticsearch déclaré **healthy** (healthcheck toutes les 10s, 20 tentatives max)
+
+Les applications Python envoient leurs traces via la variable d'environnement `OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4317`.
+
+### 5.4 Filebeat (filebeat/filebeat.yml)
 
 Collecte les logs de tous les conteneurs Docker via `/var/run/docker.sock` et les transmet à Logstash sur le port 5044.
 
@@ -125,7 +139,9 @@ Vérifier que tous les conteneurs sont up :
 docker ps
 ```
 
-Conteneurs attendus : `elasticsearch`, `kibana`, `logstash`, `filebeat`
+Conteneurs attendus : `elasticsearch`, `kibana`, `logstash`, `filebeat`, `jaeger`
+
+> ℹ️ Jaeger démarre après Elasticsearch (healthcheck). Prévoir ~30s d'attente au premier démarrage.
 
 ### Lancer les applications Python
 
@@ -150,10 +166,16 @@ curl -s http://localhost:9200/_cat/indices | grep ynov
 
 ---
 
-## 7. Kibana
+## 7. Interfaces web
 
-**URL :** http://localhost:5601  
-**Login :** `elastic`  
+| Interface | URL | Description |
+|-----------|-----|-------------|
+| **Kibana** | http://localhost:5601 | Dashboards logs |
+| **Jaeger UI** | http://localhost:16686 | Visualisation des traces distribuées |
+
+### Kibana
+
+**Login :** `elastic`
 **Mot de passe :** `changeme`
 
 ### Créer le Data View
@@ -166,6 +188,15 @@ Analytics → Discover → Create a data view
 | Index pattern | `ynov-logs-*` |
 | Timestamp field | `@timestamp` |
 
+### Jaeger UI
+
+Dans l'interface Jaeger (http://localhost:16686) :
+1. Sélectionner un service (`api-server` ou `api-client`) dans le menu déroulant
+2. Cliquer sur **Find Traces** pour lister les traces
+3. Cliquer sur une trace pour voir le détail des spans et la propagation client → serveur
+
+Le champ `trace_id` présent dans les logs Kibana correspond à l'ID de trace Jaeger — ce qui permet de corréler un log avec sa trace.
+
 ### Dashboards
 
 | Visualisation | Type | Description |
@@ -175,6 +206,18 @@ Analytics → Discover → Create a data view
 | Volume par endpoint | Bar vertical | Nombre de requêtes par endpoint |
 | Proportion erreurs | Bar vertical percentage | Répartition des codes HTTP par service |
 | Dernières erreurs | Table | Derniers événements WARNING/ERROR |
+| Logs par span | Table | Tous les logs associés à un `span_id` donné |
+
+### Corrélation Jaeger → Kibana via span_id
+
+Le dashboard intègre un **contrôle `span_id`** permettant de filtrer dynamiquement les logs à partir d'un identifiant de span récupéré dans Jaeger.
+
+**Workflow :**
+1. Dans **Jaeger UI** (http://localhost:16686), naviguer jusqu'à une trace et copier le `span_id` d'un span d'intérêt
+2. Dans **Kibana**, coller le `span_id` dans le contrôle de filtre du dashboard
+3. La table **Logs par span** affiche tous les logs produits pendant l'exécution de ce span précis
+
+Ce mécanisme permet de relier directement un span Jaeger à ses logs applicatifs, facilitant le diagnostic d'un appel spécifique sans avoir à filtrer manuellement.
 
 ---
 
